@@ -13,33 +13,25 @@ This is a Python code snippet that captures screenshots at regular intervals and
 1. Clone the repository and navigate to the project directory.
 
 2. Install the required dependencies using the following command:
-
    ```
    pip install pyautogui opencv-python
    ```
 
-3. Open the `timelapse_maker.py` file in your preferred text editor.
-
-4. The script accepts the following command-line arguments:
-
+3. The script accepts the following command-line arguments:
    - `--num_hours`: Number of hours to capture screenshots (default is 2).
    - `--fps`: Frames per second for the timelapse video (default is 15).
 
-5. Save the changes.
-
-6. Run the script using the following command:
-
+4. Run the script using the following command:
    ```
    python timelapse_maker.py --num_hours <hours> --fps <fps>
    ```
-
    Replace `<hours>` with the desired number of hours for capturing screenshots, and `<fps>` with the desired frame rate for the timelapse video.
 
-7. The script will capture screenshots for the specified duration and save them in a directory with a timestamp.
+5. The script will capture screenshots for the specified duration and save them in a directory with a timestamp.
 
-8. After capturing the screenshots, the script will create a timelapse video by stitching the images together.
+6. After capturing the screenshots, the script will create a timelapse video by stitching the images together.
 
-9. Once the video is created, it will be saved in the project directory with a timestamp.
+7. Once the video is created, it will be saved in the project directory with a timestamp.
 
 ## Notes
 
