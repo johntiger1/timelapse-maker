@@ -1,6 +1,11 @@
 # Timelapse Maker
 
-This is a Python code snippet that captures screenshots at regular intervals and then stitches them together to create a timelapse video. It uses the `pyautogui` library for capturing screenshots and the `cv2` library for video processing.
+Was trying to find a Mac timelapse maker that creates timelapses from screenshots and not from recording a video of your screen. This is my simple, naive attempt at it. 
+
+Timelapse-maker captures screenshots at regular intervals and then stitches them together to create a timelapse video. It uses the `pyautogui` library for capturing screenshots and the `cv2` library for video processing.
+
+Not tested on Windows, but open to PRs and user feedback!
+
 
 ## Requirements
 
