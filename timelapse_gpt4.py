@@ -3,6 +3,7 @@ import time
 import pyautogui
 import cv2
 
+HOURS_TO_SECONDS=3600
 # Step 1: Capture screenshots and save them in a directory
 def capture_screenshots(duration, output_dir):
     if not os.path.exists(output_dir):
@@ -15,7 +16,7 @@ def capture_screenshots(duration, output_dir):
         screenshot = pyautogui.screenshot()
         screenshot.save(os.path.join(output_dir, f'screenshot_{counter:04d}.png'))
         counter += 1
-        time.sleep(0.1)
+        time.sleep(1)
 
 # Step 2: Stitch the screenshots together to form a video
 def create_timelapse_video(input_dir, output_file, fps):
@@ -34,15 +35,14 @@ def create_timelapse_video(input_dir, output_file, fps):
     video.release()
 
 if __name__ == "__main__":
-    # specify in hours
-
-    duration = 3600*2  # Duration of the screen capture in seconds
-    fps = 30
+    num_hours = 2
+    duration = HOURS_TO_SECONDS*num_hours  # Duration of the screen capture in seconds
+    fps = 15
 
     # Create a new directory with a unique name for the screenshots and video
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     output_dir = f"screenshots_{timestamp}"
-    output_file = f"timelapse_{timestamp}.mp4"
+    output_file = f"adjust_fps_timelapse_{timestamp}.mp4"
 
     print("Capturing screenshots...")
     capture_screenshots(duration, output_dir)
