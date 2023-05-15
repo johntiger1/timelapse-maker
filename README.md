@@ -20,18 +20,20 @@ This is a Python code snippet that captures screenshots at regular intervals and
 
 3. Open the `timelapse_maker.py` file in your preferred text editor.
 
-4. Modify the script to adjust the settings according to your requirements:
+4. The script accepts the following command-line arguments:
 
-   - `num_hours`: Set the number of hours to capture screenshots (default is 2).
-   - `fps`: Set the frames per second for the timelapse video (default is 15).
+   - `--num_hours`: Number of hours to capture screenshots (default is 2).
+   - `--fps`: Frames per second for the timelapse video (default is 15).
 
 5. Save the changes.
 
 6. Run the script using the following command:
 
    ```
-   python timelapse_maker.py
+   python timelapse_maker.py --num_hours <hours> --fps <fps>
    ```
+
+   Replace `<hours>` with the desired number of hours for capturing screenshots, and `<fps>` with the desired frame rate for the timelapse video.
 
 7. The script will capture screenshots for the specified duration and save them in a directory with a timestamp.
 
