@@ -1,9 +1,11 @@
 import os
 import time
+import argparse
 import pyautogui
 import cv2
 
-HOURS_TO_SECONDS=3600
+HOURS_TO_SECONDS = 3600
+
 # Step 1: Capture screenshots and save them in a directory
 def capture_screenshots(duration, output_dir):
     if not os.path.exists(output_dir):
@@ -35,9 +37,14 @@ def create_timelapse_video(input_dir, output_file, fps):
     video.release()
 
 if __name__ == "__main__":
-    num_hours = 2
-    duration = HOURS_TO_SECONDS*num_hours  # Duration of the screen capture in seconds
-    fps = 15
+    parser = argparse.ArgumentParser(description="Timelapse Maker")
+    parser.add_argument("--num_hours", type=int, default=2, help="Number of hours to capture screenshots")
+    parser.add_argument("--fps", type=int, default=15, help="Frames per second for the timelapse video")
+    args = parser.parse_args()
+
+    num_hours = args.num_hours
+    duration = HOURS_TO_SECONDS * num_hours  # Duration of the screen capture in seconds
+    fps = args.fps
 
     # Create a new directory with a unique name for the screenshots and video
     timestamp = time.strftime("%Y%m%d-%H%M%S")
